@@ -79,7 +79,7 @@
         <div class="hide-after-change">
             <br>
             <div class="alert alert-info">
-                Selecteer hierboven voor welke klasse u zich in wilt schrijven.
+                Selecteer hierboven de klasse waaraan jij mee wil doen.
             </div>
         </div>
 
@@ -97,7 +97,7 @@
                 <?php $dates = json_decode($class->dates); ?>
                 <?php if (!empty($dates)): ?>
                     <div class="form-group">
-                        Op welke datum(s) wilt u deelnemen?*
+                        Op welke datum(s) sta jij aan de start?*
                         <?php foreach ($dates as $date): ?>
                             <div class="radio">
                                 <label><input type="radio" name="date" value="<?php echo $date; ?>" required> <?php echo $date; ?></label>
@@ -209,7 +209,7 @@
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="terms_accepted" required> Door in te schrijven gaat men aan akkoord met de door de organisatie opgelegde regels. Dit regelement is te vinden op <a href="/deelnemen" target="_blank">www.crazycrossbergeijk.nl/deelnemen</a>*
+                            <input type="checkbox" name="terms_accepted" required> Door in te schrijven ga jij akkoord met de door de organisatie opgelegde regels. Dit regelement is te vinden op <a href="/deelnemen" target="_blank">www.crazycrossbergeijk.nl/deelnemen</a>*
                         </label>
                     </div>
                 </div>

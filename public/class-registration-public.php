@@ -230,7 +230,7 @@ class registration_Public {
 					$this->db->update('cc_groups', ['status' => '3'], ['id' => $group->id]);
 
 					// Send email out about the failed payment
-					$paymentUrl = get_permalink(2689) . '?groupId=' . $group->id;
+					$paymentUrl = get_permalink(4215) . '?groupId=' . $group->id;
 					ob_start();
 					require plugin_dir_path( __FILE__ ) . 'partials/mails/payment-request.php';
 					$mailBody = ob_get_clean();
@@ -255,7 +255,7 @@ class registration_Public {
 		}
 	}
 
-	public function display_payment($attr, $tag) {
+	public function display_payment($attr, $content = null, $tag) {
 		if (isset($_GET['errors'])) {
 			ini_set('display_errors', 1);
 			ini_set('display_startup_errors', 1);
@@ -365,7 +365,7 @@ class registration_Public {
 	  }    
 	}
 
-	public function display($atts, $tag)
+	public function display($atts, $content = null, $tag)
 	{
 		// normalize attribute keys, lowercase
 		$atts = array_change_key_case((array) $atts, CASE_LOWER);
@@ -525,7 +525,7 @@ class registration_Public {
 
 					// Redirect to payment if class is not full
 					if (!$queueWarning && $saved) {
-						$paymentUrl = get_permalink(2689) . 'betalen/?groupId=' . $group_id;
+						$paymentUrl = get_permalink(4215) . 'betalen/?groupId=' . $group_id;
 						$this->redirect($paymentUrl);
 						// header('Location: ' . $paymentUrl, true, 302);
 					}
