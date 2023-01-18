@@ -395,7 +395,7 @@ class registration_Admin
                                 // TODO send mail to customer with starting number
                                 if ($_POST['status'] == '1') {
 
-                                    // Require HTML2PDF
+                                    // Require HTML2PDF    
                                     if (!class_exists('HTML2PDF')) {
 
                                         require plugin_dir_path( __FILE__ ) . '../assets/html2pdf/html2pdf.class.php';
@@ -411,7 +411,6 @@ class registration_Admin
                                     $html2pdf->writeHTML($rawPdf);
                                     ob_clean();
                                     $html2pdf->Output($pdfPath, 'F');
-
                                     ob_start();
                                     require plugin_dir_path( __FILE__ ) . 'partials/mails/payment-approved.php';
                                     $mailBody = ob_get_clean();
@@ -432,7 +431,7 @@ class registration_Admin
                                 } elseif ($_POST['status'] == '2'
                                     && $group->status == '3'
                                 ) {
-                                    $paymentUrl = get_permalink(2689) . '?groupId=' . $group->id;
+                                    $paymentUrl = get_permalink(4215) . '?groupId=' . $group->id;
 
                                     ob_start();
                                     require plugin_dir_path( __FILE__ ) . '../public/partials/mails/payment-request.php';
