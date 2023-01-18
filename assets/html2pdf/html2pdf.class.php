@@ -12,7 +12,7 @@
 if (!defined('__CLASS_HTML2PDF__')) {
 
     define('__CLASS_HTML2PDF__', '4.04');
-    define('HTML2PDF_USED_TCPDF_VERSION', '5.0.002');
+    define('HTML2PDF_USED_TCPDF_VERSION', '6.6.2');
 
     require_once(dirname(__FILE__).'/_class/exception.class.php');
     require_once(dirname(__FILE__).'/_class/locale.class.php');
@@ -138,7 +138,7 @@ if (!defined('__CLASS_HTML2PDF__')) {
             $this->_encoding     = $encoding;
 
             // load the Local
-            HTML2PDF_locale::load($this->_langue);
+            //HTML2PDF_locale::load($this->_langue);
 
             // create the  HTML2PDF_myPdf object
             $this->pdf = new HTML2PDF_myPdf($orientation, 'mm', $format, $unicode, $encoding);
